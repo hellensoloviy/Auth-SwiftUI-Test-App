@@ -26,13 +26,14 @@ struct LoginView: View {
             Button("Login".uppercased()) {
                 
             }
-            .foregroundStyle(.green)
-            .bold()
+            .buttonStyle(MainButtonStyle())
+
             
             Spacer()
             Button("Register") {
                 
             }
+            
         }
         .padding(.horizontal, 50)
         .navigationTitle("Login")

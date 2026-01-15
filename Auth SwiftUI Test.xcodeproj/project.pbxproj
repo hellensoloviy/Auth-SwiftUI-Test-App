@@ -16,6 +16,7 @@
 		409E6FE12F18EC0400578499 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FE02F18EC0400578499 /* LoginView.swift */; };
 		409E6FE42F18ECF600578499 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FE32F18ECF600578499 /* HomeView.swift */; };
 		409E6FE72F18ED0800578499 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FE62F18ED0800578499 /* RegisterView.swift */; };
+		409E6FE92F18EFD200578499 /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FE82F18EFD200578499 /* MainButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		409E6FE02F18EC0400578499 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		409E6FE32F18ECF600578499 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		409E6FE62F18ED0800578499 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		409E6FE82F18EFD200578499 /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -149,19 +151,11 @@
 		409E6FD72F18E7B700578499 /* SharedViews */ = {
 			isa = PBXGroup;
 			children = (
-				409E6FDA2F18E95B00578499 /* TextFieldStyles */,
+				409E6FF02F18F40700578499 /* Styles */,
 				409E6FD82F18E84100578499 /* EmailField.swift */,
 				409E6FDD2F18EB6100578499 /* PasswordField.swift */,
 			);
 			path = SharedViews;
-			sourceTree = "<group>";
-		};
-		409E6FDA2F18E95B00578499 /* TextFieldStyles */ = {
-			isa = PBXGroup;
-			children = (
-				409E6FDB2F18E96D00578499 /* DefaultTextFieldStyle.swift */,
-			);
-			path = TextFieldStyles;
 			sourceTree = "<group>";
 		};
 		409E6FDF2F18EBFE00578499 /* Login */ = {
@@ -186,6 +180,15 @@
 				409E6FE62F18ED0800578499 /* RegisterView.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		409E6FF02F18F40700578499 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				409E6FDB2F18E96D00578499 /* DefaultTextFieldStyle.swift */,
+				409E6FE82F18EFD200578499 /* MainButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +341,7 @@
 				409E6FD92F18E84100578499 /* EmailField.swift in Sources */,
 				409E6FE72F18ED0800578499 /* RegisterView.swift in Sources */,
 				409E6FDE2F18EB6100578499 /* PasswordField.swift in Sources */,
+				409E6FE92F18EFD200578499 /* MainButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

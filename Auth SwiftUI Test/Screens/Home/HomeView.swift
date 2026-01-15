@@ -14,7 +14,7 @@ struct HomeView: View {
             Spacer()
             
             Text("Info example text")
-                .font(.caption)
+                .font(.headline)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 10)
             
@@ -22,22 +22,27 @@ struct HomeView: View {
                 
             }
             .padding(.bottom, 10)
+            .buttonStyle(MainButtonStyle())
+
             
             Button("Reset") {
                 
             }
+
             
             Spacer()
             Button("Logout") {
                 
             }
-            .padding(.bottom, 10)
-            .foregroundStyle(.brown)
-            .bold()
+            .buttonStyle(MainButtonStyle())
+            .padding()
+
 
         }
         .navigationTitle("Home screen")
         .navigationBarBackButtonHidden()
+        .padding(.horizontal, 50)
+
     }
 }
 

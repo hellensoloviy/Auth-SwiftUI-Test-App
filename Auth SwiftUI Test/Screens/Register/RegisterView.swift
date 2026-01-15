@@ -23,13 +23,13 @@ struct RegisterView: View {
             Button("Register".uppercased()) {
                 
             }
-            .foregroundStyle(.green)
-            .bold()
+            .buttonStyle(MainButtonStyle())
             
             Spacer()
             Button("Login") {
                 
             }
+            
         }
         .padding(.horizontal, 50)
         .navigationTitle("Register")
