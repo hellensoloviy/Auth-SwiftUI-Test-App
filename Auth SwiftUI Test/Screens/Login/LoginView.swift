@@ -8,30 +8,32 @@
 import SwiftUI
 
 #Preview {
-    LoginView()
+    LoginView(viewModel: .init())
 }
 
 struct LoginView: View {
+    
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         VStack {
             
             Spacer()
-            EmailField(value: .constant("text.email@email.com"))
+            EmailField(value: $viewModel.email)
                 .padding(.bottom, 10)
 
-            PasswordField(value: .constant("text13455"))
+            PasswordField(value: $viewModel.password)
                 .padding(.bottom, 10)
             
             Button("Login".uppercased()) {
-                
+                viewModel.onLoginUserAction()
             }
             .buttonStyle(MainButtonStyle())
 
             
             Spacer()
             Button("Register") {
-                
+                viewModel.onRegisterUserAction()
             }
             
         }
