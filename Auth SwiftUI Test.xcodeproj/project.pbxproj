@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		409E6FD12F18E78300578499 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409E6FCB2F18E78300578499 /* Preview Assets.xcassets */; };
+		409E6FD22F18E78300578499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409E6FCD2F18E78300578499 /* Assets.xcassets */; };
+		409E6FD32F18E78300578499 /* Auth_SwiftUI_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FCE2F18E78300578499 /* Auth_SwiftUI_TestApp.swift */; };
+		409E6FD42F18E78300578499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FCF2F18E78300578499 /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		409E6FAF2F18E74B00578499 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +34,13 @@
 		409E6F9E2F18E74900578499 /* Auth SwiftUI Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auth SwiftUI Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		409E6FAE2F18E74B00578499 /* Auth SwiftUI TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Auth SwiftUI TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		409E6FB82F18E74B00578499 /* Auth SwiftUI TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Auth SwiftUI TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		409E6FCB2F18E78300578499 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		409E6FCD2F18E78300578499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		409E6FCE2F18E78300578499 /* Auth_SwiftUI_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth_SwiftUI_TestApp.swift; sourceTree = "<group>"; };
+		409E6FCF2F18E78300578499 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		409E6FA02F18E74900578499 /* Auth SwiftUI Test */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Auth SwiftUI Test";
-			sourceTree = "<group>";
-		};
 		409E6FB12F18E74B00578499 /* Auth SwiftUI TestTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Auth SwiftUI TestTests";
@@ -75,7 +81,8 @@
 		409E6F952F18E74900578499 = {
 			isa = PBXGroup;
 			children = (
-				409E6FA02F18E74900578499 /* Auth SwiftUI Test */,
+				409E6FD02F18E78300578499 /* Auth SwiftUI Test */,
+				409E6FCC2F18E78300578499 /* Preview Content */,
 				409E6FB12F18E74B00578499 /* Auth SwiftUI TestTests */,
 				409E6FBB2F18E74B00578499 /* Auth SwiftUI TestUITests */,
 				409E6F9F2F18E74900578499 /* Products */,
@@ -92,6 +99,48 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		409E6FCC2F18E78300578499 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				409E6FCB2F18E78300578499 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		409E6FD02F18E78300578499 /* Auth SwiftUI Test */ = {
+			isa = PBXGroup;
+			children = (
+				409E6FCE2F18E78300578499 /* Auth_SwiftUI_TestApp.swift */,
+				409E6FCF2F18E78300578499 /* ContentView.swift */,
+				409E6FD72F18E7B700578499 /* SharedViews */,
+				409E6FD62F18E7B200578499 /* Screens */,
+				409E6FD52F18E78C00578499 /* Resources */,
+			);
+			path = "Auth SwiftUI Test";
+			sourceTree = "<group>";
+		};
+		409E6FD52F18E78C00578499 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				409E6FCD2F18E78300578499 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		409E6FD62F18E7B200578499 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		409E6FD72F18E7B700578499 /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +155,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				409E6FA02F18E74900578499 /* Auth SwiftUI Test */,
 			);
 			name = "Auth SwiftUI Test";
 			packageProductDependencies = (
@@ -212,6 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409E6FD12F18E78300578499 /* Preview Assets.xcassets in Resources */,
+				409E6FD22F18E78300578499 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409E6FD32F18E78300578499 /* Auth_SwiftUI_TestApp.swift in Sources */,
+				409E6FD42F18E78300578499 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

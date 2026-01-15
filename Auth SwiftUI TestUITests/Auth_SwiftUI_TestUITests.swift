@@ -2,7 +2,7 @@
 //  Auth_SwiftUI_TestUITests.swift
 //  Auth SwiftUI TestUITests
 //
-//  Created by Olena Solovii AFT on 15.01.2026.
+//  Created by Hellen Soloviy on 15.01.2026.
 //
 
 import XCTest
