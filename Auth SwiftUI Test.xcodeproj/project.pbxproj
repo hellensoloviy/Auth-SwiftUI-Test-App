@@ -20,6 +20,13 @@
 		409E6FF22F18F67C00578499 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FF12F18F67C00578499 /* LoginViewModel.swift */; };
 		409E6FF42F18F84F00578499 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FF32F18F84F00578499 /* HomeViewModel.swift */; };
 		409E6FF62F18FA4C00578499 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409E6FF52F18FA4C00578499 /* RegisterViewModel.swift */; };
+		40BB183E2F1E4A6A0060C479 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB183D2F1E4A6A0060C479 /* NetworkHandler.swift */; };
+		40BB18402F1E4B330060C479 /* ConfigurationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB183F2F1E4B330060C479 /* ConfigurationError.swift */; };
+		40BB18422F1E4B580060C479 /* FormError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB18412F1E4B580060C479 /* FormError.swift */; };
+		40BB18442F1E4B800060C479 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB18432F1E4B800060C479 /* KeychainError.swift */; };
+		40BB18462F1E4BA90060C479 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB18452F1E4BA90060C479 /* NetworkError.swift */; };
+		40BB18492F1E4D270060C479 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB18482F1E4D270060C479 /* AccessToken.swift */; };
+		40BB184B2F1E4DF70060C479 /* AccessTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB184A2F1E4DF70060C479 /* AccessTokenStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +63,13 @@
 		409E6FF12F18F67C00578499 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		409E6FF32F18F84F00578499 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		409E6FF52F18FA4C00578499 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		40BB183D2F1E4A6A0060C479 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		40BB183F2F1E4B330060C479 /* ConfigurationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationError.swift; sourceTree = "<group>"; };
+		40BB18412F1E4B580060C479 /* FormError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormError.swift; sourceTree = "<group>"; };
+		40BB18432F1E4B800060C479 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		40BB18452F1E4BA90060C479 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		40BB18482F1E4D270060C479 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		40BB184A2F1E4DF70060C479 /* AccessTokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -128,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				409E6FCE2F18E78300578499 /* Auth_SwiftUI_TestApp.swift */,
+				40BB183A2F1E49FE0060C479 /* ModelLayer */,
 				409E6FD72F18E7B700578499 /* SharedViews */,
 				409E6FD62F18E7B200578499 /* Screens */,
 				409E6FD52F18E78C00578499 /* Resources */,
@@ -198,6 +213,44 @@
 				409E6FE82F18EFD200578499 /* MainButtonStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		40BB183A2F1E49FE0060C479 /* ModelLayer */ = {
+			isa = PBXGroup;
+			children = (
+				40BB18472F1E4CBD0060C479 /* Error */,
+				40BB183C2F1E4A520060C479 /* System */,
+				40BB183B2F1E4A150060C479 /* Network */,
+			);
+			path = ModelLayer;
+			sourceTree = "<group>";
+		};
+		40BB183B2F1E4A150060C479 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				40BB183D2F1E4A6A0060C479 /* NetworkHandler.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		40BB183C2F1E4A520060C479 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				40BB18482F1E4D270060C479 /* AccessToken.swift */,
+				40BB184A2F1E4DF70060C479 /* AccessTokenStorage.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		40BB18472F1E4CBD0060C479 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				40BB183F2F1E4B330060C479 /* ConfigurationError.swift */,
+				40BB18412F1E4B580060C479 /* FormError.swift */,
+				40BB18432F1E4B800060C479 /* KeychainError.swift */,
+				40BB18452F1E4BA90060C479 /* NetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,16 +397,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				409E6FE12F18EC0400578499 /* LoginView.swift in Sources */,
+				40BB18462F1E4BA90060C479 /* NetworkError.swift in Sources */,
+				40BB18442F1E4B800060C479 /* KeychainError.swift in Sources */,
 				409E6FE42F18ECF600578499 /* HomeView.swift in Sources */,
 				409E6FD32F18E78300578499 /* Auth_SwiftUI_TestApp.swift in Sources */,
+				40BB18402F1E4B330060C479 /* ConfigurationError.swift in Sources */,
+				40BB18422F1E4B580060C479 /* FormError.swift in Sources */,
 				409E6FF42F18F84F00578499 /* HomeViewModel.swift in Sources */,
 				409E6FF62F18FA4C00578499 /* RegisterViewModel.swift in Sources */,
 				409E6FDC2F18E96D00578499 /* DefaultTextFieldStyle.swift in Sources */,
 				409E6FD92F18E84100578499 /* EmailField.swift in Sources */,
+				40BB184B2F1E4DF70060C479 /* AccessTokenStorage.swift in Sources */,
+				40BB18492F1E4D270060C479 /* AccessToken.swift in Sources */,
 				409E6FE72F18ED0800578499 /* RegisterView.swift in Sources */,
 				409E6FDE2F18EB6100578499 /* PasswordField.swift in Sources */,
 				409E6FE92F18EFD200578499 /* MainButtonStyle.swift in Sources */,
 				409E6FF22F18F67C00578499 /* LoginViewModel.swift in Sources */,
+				40BB183E2F1E4A6A0060C479 /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

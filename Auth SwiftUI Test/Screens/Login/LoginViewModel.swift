@@ -2,7 +2,7 @@
 //  LoginViewModel.swift
 //  Auth SwiftUI Test
 //
-//  Created by Olena Solovii AFT on 15.01.2026.
+//  Created by Hellen Soloviy on 15.01.2026.
 //
 
 import SwiftUI
