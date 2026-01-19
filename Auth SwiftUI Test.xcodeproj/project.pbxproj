@@ -27,6 +27,7 @@
 		40BB18462F1E4BA90060C479 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB18452F1E4BA90060C479 /* NetworkError.swift */; };
 		40BB18492F1E4D270060C479 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB18482F1E4D270060C479 /* AccessToken.swift */; };
 		40BB184B2F1E4DF70060C479 /* AccessTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB184A2F1E4DF70060C479 /* AccessTokenStorage.swift */; };
+		40BB184D2F1E52550060C479 /* SecureFetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB184C2F1E52550060C479 /* SecureFetchData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		40BB18452F1E4BA90060C479 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		40BB18482F1E4D270060C479 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		40BB184A2F1E4DF70060C479 /* AccessTokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenStorage.swift; sourceTree = "<group>"; };
+		40BB184C2F1E52550060C479 /* SecureFetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFetchData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				40BB183D2F1E4A6A0060C479 /* NetworkHandler.swift */,
+				40BB184C2F1E52550060C479 /* SecureFetchData.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				409E6FE42F18ECF600578499 /* HomeView.swift in Sources */,
 				409E6FD32F18E78300578499 /* Auth_SwiftUI_TestApp.swift in Sources */,
 				40BB18402F1E4B330060C479 /* ConfigurationError.swift in Sources */,
+				40BB184D2F1E52550060C479 /* SecureFetchData.swift in Sources */,
 				40BB18422F1E4B580060C479 /* FormError.swift in Sources */,
 				409E6FF42F18F84F00578499 /* HomeViewModel.swift in Sources */,
 				409E6FF62F18FA4C00578499 /* RegisterViewModel.swift in Sources */,
