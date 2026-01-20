@@ -14,6 +14,8 @@ struct AccessTokenStorage {
     private let accountKey = "com.hellen.soloviy.auth_swiftui_app_access_token" //TODO: - another way to define by using app build settings ?
     
     func save(_ token: AccessToken) -> Bool {
+        
+        //TODO: - check is deleted succesfully ? 
         delete()
         
         /// no handling throw at the moment

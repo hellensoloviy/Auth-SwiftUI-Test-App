@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 protocol RegisterNavigationDelegate: AnyObject {
-    func onRegister()
+    func onRegisterActionStart()
     func onSwitchToLogin()
 }
 
@@ -35,7 +35,7 @@ extension RegisterView.ViewModel {
     }
     
     func onRegisterUserAction() {
-        navigationDelegate?.onRegister()
+        navigationDelegate?.onRegisterActionStart()
     }
     
 }

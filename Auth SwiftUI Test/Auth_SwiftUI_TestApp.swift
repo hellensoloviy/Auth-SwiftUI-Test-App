@@ -9,14 +9,14 @@ import SwiftUI
 
 /// Added just to have a check on all the previews 
 #Preview {
-    LoginView(viewModel: .init())
+    NavigationCoordinatorView(coordinator: .init())
 }
 
 @main
 struct Auth_SwiftUI_TestApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: .init())
+            NavigationCoordinatorView(coordinator: .init())
         }
     }
 }

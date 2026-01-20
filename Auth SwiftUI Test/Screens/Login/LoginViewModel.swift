@@ -10,8 +10,8 @@ import Combine
 
 
 protocol LoginNavigationDelegate: AnyObject {
-    func onRegister()
-    func onLogin()
+    func onSwitchToRegister()
+    func onLoginActionStart()
 }
 
 extension LoginView {
@@ -30,11 +30,11 @@ extension LoginView {
 extension LoginView.ViewModel {
     
     func onLoginUserAction() {
-        navigationDelegate?.onLogin()
+        navigationDelegate?.onLoginActionStart()
     }
     
     func onRegisterUserAction() {
-        navigationDelegate?.onRegister()
+        navigationDelegate?.onSwitchToRegister()
     }
     
 }

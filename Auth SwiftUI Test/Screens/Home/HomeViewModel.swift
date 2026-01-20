@@ -19,6 +19,10 @@ extension HomeView {
         
         @Published var infoText: String = ""
         
+        @Published var showAlert: Bool = false
+        var alertTitle: String = ""
+        var alertMessage: String = ""
+        
         weak var navigationDelegate: HomeViewNavigationDelegate?
         
     }
