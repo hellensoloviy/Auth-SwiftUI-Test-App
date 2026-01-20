@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+
+#Preview {
+    HomeView(viewModel: .init(networkHandler: .init(), tokenStorage: .init()))
+}
+
 struct HomeView: View {
     
     @StateObject var viewModel: ViewModel
@@ -45,10 +50,11 @@ struct HomeView: View {
         .navigationTitle("Home screen")
         .navigationBarBackButtonHidden()
         .padding(.horizontal, 50)
-
+        .alert(viewModel.alertTitle, isPresented: $viewModel.showAlert) {
+            Button("Ok", role: .cancel, action: { /* nothing needed additionally  */})
+        } message: {
+            Text(viewModel.alertMessage)
+        }
     }
 }
 
-#Preview {
-    HomeView(viewModel: .init())
-}

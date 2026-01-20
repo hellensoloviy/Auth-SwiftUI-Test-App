@@ -11,7 +11,7 @@ import Combine
 
 protocol LoginNavigationDelegate: AnyObject {
     func onSwitchToRegister()
-    func onLoginActionStart()
+    func onLoginActionSuccess()
 }
 
 extension LoginView {
@@ -21,7 +21,24 @@ extension LoginView {
         @Published var email: String = ""
         @Published var password: String = ""
         
+        @Published var showAlert: Bool = false
+        var alertTitle: String = ""
+        var alertMessage: String = ""
+        
         weak var navigationDelegate: LoginNavigationDelegate?
+        
+        //MARK: - Private
+        
+        private let networkHandler: NetworkHandler
+        private let tokenStorage: AccessTokenStorage
+        
+        //MARK: -
+        
+        init(networkHandler: NetworkHandler, tokenStorage: AccessTokenStorage) {
+            self.networkHandler = networkHandler
+            self.tokenStorage = tokenStorage
+        }
+        
     }
     
 }
@@ -30,7 +47,64 @@ extension LoginView {
 extension LoginView.ViewModel {
     
     func onLoginUserAction() {
-        navigationDelegate?.onLoginActionStart()
+        
+        guard !email.isEmpty, !password.isEmpty else {
+            alertTitle = "Oops!"
+            alertMessage = "Please check the fields are not empty"
+            showAlert = true
+            return
+        }
+        
+        let route = NetworkRoutes.login
+        guard let url = route.url else {
+            alertTitle = "Oops!"
+            alertMessage = "Can't configure a login request"
+            showAlert = true
+            return
+        }
+        
+        let json = ["email": email,
+                    "password": password]
+        
+        Task {
+            do {
+                let responseData = try await networkHandler.reuest(url,
+                                                                   params: json,
+                                                                   responseType: AccessToken.self,
+                                                                   method: route.method.rawValue)
+                
+                guard tokenStorage.save(responseData) else {
+                    alertTitle = "Oops!"
+                    alertMessage = "Can't save a token!"
+                    showAlert = true
+                    return
+                }
+                
+                await MainActor.run { [weak self] in
+                    self?.navigationDelegate?.onLoginActionSuccess()
+                }
+                
+            } catch {
+                await MainActor.run { [weak self] in
+                    guard let `self` else { fatalError("Should never happen case! Please check for errors") }
+                    self.alertTitle = "Error!"
+                    self.alertMessage = error.localizedDescription
+                    self.showAlert = true
+                    return
+                }
+            }
+            
+        }
+        
+    }
+    
+    func loginActionSuccess() {
+        navigationDelegate?.onLoginActionSuccess()
+
+    }
+    
+    func loginActionFailure() {
+        //TODO: - retry action ?
     }
     
     func onRegisterUserAction() {

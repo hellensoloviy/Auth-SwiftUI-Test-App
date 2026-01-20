@@ -90,7 +90,7 @@ private extension NavigationCoordinator {
     
     
     func makeViewModelHome() -> HomeView.ViewModel {
-        let viewModel = HomeView.ViewModel()
+        let viewModel = HomeView.ViewModel(networkHandler: networkHandler, tokenStorage: tokenStorage)
         viewModel.navigationDelegate = self
         return viewModel
     }
@@ -116,7 +116,7 @@ private extension NavigationCoordinator {
     
     
     func makeViewModelRegister() -> RegisterView.ViewModel {
-        let viewModel = RegisterView.ViewModel()
+        let viewModel = RegisterView.ViewModel(networkHandler: networkHandler)
         viewModel.navigationDelegate = self
         return viewModel
     }
@@ -129,7 +129,7 @@ private extension NavigationCoordinator {
 }
 
 extension NavigationCoordinator: RegisterNavigationDelegate {
-    func onRegisterActionStart() {
+    func onRegisterActionSuccess() {
         path = [] /// default view to show
     }
     
@@ -147,7 +147,7 @@ private extension NavigationCoordinator {
     
     
     func makeViewModelLogin() -> LoginView.ViewModel {
-        let viewModel = LoginView.ViewModel()
+        let viewModel = LoginView.ViewModel(networkHandler: networkHandler, tokenStorage: tokenStorage)
         viewModel.navigationDelegate = self
         return viewModel
     }
@@ -160,7 +160,7 @@ private extension NavigationCoordinator {
 }
 
 extension NavigationCoordinator: LoginNavigationDelegate {
-    func onLoginActionStart() {
+    func onLoginActionSuccess() {
         path = []
     }
     

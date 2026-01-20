@@ -8,7 +8,7 @@
 import SwiftUI
 
 #Preview {
-    LoginView(viewModel: .init())
+    LoginView(viewModel: .init(networkHandler: .init(), tokenStorage: .init()))
 }
 
 struct LoginView: View {
@@ -39,6 +39,11 @@ struct LoginView: View {
         }
         .padding(.horizontal, 50)
         .navigationTitle("Login")
+        .alert(viewModel.alertTitle, isPresented: $viewModel.showAlert) {
+            Button("Ok", role: .cancel, action: { /* nothing needed additionally  */})
+        } message: {
+            Text(viewModel.alertMessage)
+        }
     }
     
 }

@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+#Preview {
+    RegisterView(viewModel: .init(networkHandler: .init()))
+}
+
 struct RegisterView: View {
     
     @StateObject var viewModel: ViewModel
@@ -36,9 +40,14 @@ struct RegisterView: View {
         }
         .padding(.horizontal, 50)
         .navigationTitle("Register")
+        .alert(viewModel.alertTitle, isPresented: $viewModel.showAlert) {
+            Button("Ok", role: .cancel, action: {
+                viewModel.handleRegistrationResult()
+            })
+        } message: {
+            Text(viewModel.alertMessage)
+        }
     }
 }
 
-#Preview {
-    RegisterView(viewModel: .init())
-}
+

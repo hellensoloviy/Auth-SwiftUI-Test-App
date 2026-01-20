@@ -25,6 +25,18 @@ extension HomeView {
         
         weak var navigationDelegate: HomeViewNavigationDelegate?
         
+        //MARK: - Private
+        
+        private let networkHandler: NetworkHandler
+        private let tokenStorage: AccessTokenStorage
+        
+        //MARK: -
+        
+        init(networkHandler: NetworkHandler, tokenStorage: AccessTokenStorage) {
+            self.networkHandler = networkHandler
+            self.tokenStorage = tokenStorage
+        }
+        
     }
     
 }
@@ -37,13 +49,39 @@ extension HomeView.ViewModel {
     }
     
     func onResetInfoText() {
-        infoText = ""
+        infoText = defaultText
     }
     
     func onFetchAction() {
-        //TODO: not implemented at the moment
         
-        infoText = "Secure data will be here"
+        let route = NetworkRoutes.login
+        guard let url = route.url, let accessString = tokenStorage.get()?.accessToken else {
+            alertTitle = "Error Occured!"
+            alertMessage = "Can't configure the request."
+            showAlert = true
+            
+            return
+        }
+        
+        
+        Task {
+            do {
+                let responseData = try await networkHandler.reuest(url,
+                                                                   responseType: SecureFetchData.self,
+                                                                   method: route.method.rawValue,
+                                                                   accessToken: accessString)
+                
+                await MainActor.run { [weak self] in
+                    self?.infoText = responseData.message
+                }
+                
+            } catch {
+                await MainActor.run { [weak self] in
+                    self?.infoText = error.localizedDescription
+                }
+            }
+            
+        }
     }
     
 }

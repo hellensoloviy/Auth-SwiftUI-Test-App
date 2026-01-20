@@ -69,7 +69,7 @@ class NetworkHandler {
     /// But that approach may be not so readable, so we add it as a parameter.
     func reuest<ResponseType: Decodable>(
         _ url: URL,
-        params bodyParameters: Any?,
+        params bodyParameters: Any? = nil,
         responseType: ResponseType.Type,
         method: String = HTTPMethod.get.rawValue,
         contentType: String? = ContentType.json.rawValue,
